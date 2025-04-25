@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Klazz.Backend.props" />
+</Project>
