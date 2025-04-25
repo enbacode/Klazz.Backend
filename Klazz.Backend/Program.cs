@@ -74,4 +74,6 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapHub<ChatHub>("/hub/chat");
 
+app.MapGet("/", () => "Hello World!");
+
 app.Run();

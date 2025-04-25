@@ -1,0 +1,40 @@
+﻿version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./Klazz.Backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Database=MyProject;User=sa;Password=Your_password123;
+      - Jwt__Key=YourSuperSecretKeyForJWT
+      - Jwt__Issuer=MyProject
+      - Jwt__Audience=MyProject
+      - Jwt__ExpireDays=7
+    depends_on:
+      - db
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "Your_password123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  sql_data:

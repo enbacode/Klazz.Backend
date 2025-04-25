@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Klazz.Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+938ae53d0ba9aeafd67134cd4853ec3a79a2d0e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Klazz.Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Klazz.Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
